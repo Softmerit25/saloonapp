@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Tok's Beauty Palace</title>
+    <link rel="stylesheet" href="assets/main.css">
+</head>
+<body onload="slider()">
+<div class="banner">
+    <div class="slider">
+        <img src="images/img1.jpeg" alt="Tok's Beauty Palace" id="slideImg">
+    </div>
+    <div class="overlay">
+        <div class="navbar">
+            <a href="#"><h1 class="logo">Tok's Beauty Palace</h1></a>
+            <div class="toggle" onclick="toggleMenu()"></div>
+            <div class="navigation">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="banner-text">
+            <h1>Services We Render<br><span class="change-text"></span></h1>
+        </div>
+    </div>
+    </div>
+<section>
+    <div class="about">
+        <h1 class="content">About Us</h1>
+        <p class="textBx">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto possimus ab mollitia recusandae quas blanditiis? Iste ut, totam earum excepturi veritatis quae minima id? Magni repudiandae illum quisquam perspiciatis placeat?</p>
+    </div>
+</section>
+
+
+    <script>
+    var slideImg = document.getElementById("slideImg");
+    var images = new Array(
+            "images/img1.jpeg",
+            "images/img2.jpeg",
+            "images/img3.jpeg"
+    );
+
+    var len = images.length;
+    var i = 0;
+    function slider(){
+        if (i > len-1){
+            i = 0;
+        }
+        slideImg.src = images[i];
+        i++;
+        setTimeout('slider()' ,3000);
+    }
+
+    function toggleMenu(){
+        const menuToggle = document.querySelector('.toggle');
+        const navigation = document.querySelector('.navigation');
+         menuToggle.classList.toggle('active')
+         navigation.classList.toggle('active')
+    }
+    </script>
+</body>
+</html>
